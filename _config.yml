@@ -1,3 +1,4 @@
+remote_theme : mmistakes/minimal-mistakes
 # Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your entire site, values
@@ -18,11 +19,11 @@ minimal_mistakes_skin    : "dark" # "default" "air", "aqua", "contrast", "dark",
 locale                   : "ko-KR"
 title                    : "Min's Blog"
 title_separator          : "-"
-subtitle                 : ""
+subtitle                 : # site tagline that appears below site title in masthead
 name                     : "민이"
 description              : "iOS Developer🍏"
-url                      : "https://mini0212.github.io"
-baseurl                  : ""
+url                      : "https://mini0212.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
@@ -108,8 +109,8 @@ analytics:
 # Site Author
 author:
   name             : "민이"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "iOS Developer"
+  avatar           : ""
+  bio              : ""
   location         : "Seoul, Korea"
   email            :
   links:
@@ -118,19 +119,19 @@ author:
       # url: mailto:ksmini0212@gmail.com
     - label: "Website"
       icon: "fas fa-fw fa-link"
-      # url: "https://your-website.com"
+      url: "https://blog.naver.com/taerg89"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       # url: "https://twitter.com/"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
-      # url: "https://facebook.com/"
+      # url: "https://www.facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/mini0212"
+      url: "https://github.com/mini0212"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"
+      # url: "https://www.instagram.com/"
 
 # Site Footer
 footer:
@@ -140,10 +141,10 @@ footer:
       # url:
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
-      # url:
+      # url: "https://www.facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url:
+      url: "https://github.com/mini0212"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
@@ -152,7 +153,7 @@ footer:
       # url:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      # url:
+      # url: "https://www.instagram.com/"
 
 
 # Reading Files
@@ -222,7 +223,7 @@ sass:
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
-timezone: "Asia/Seoul"
+timezone: "Asia/Seoul" # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins (previously gems:)
