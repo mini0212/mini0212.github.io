@@ -40,8 +40,7 @@ category: "Functional Programming"
     }))  // [0, 2, 4, 6, 8]
     
     print(numbers.map { $0 * 2 }) // [0, 2, 4, 6, 8]
-
- ```
+```
 
 > 매개 변수로 전달 할 함수를 클로저 상수로 두어 코드를 재사용할 수 있다.
 ```swift
@@ -84,6 +83,7 @@ category: "Functional Programming"
         .filter { $0 % 2 == 0 }
     print(doubleEven)  // [2, 4, 6]
 ```
+
 ### reduce
 
 - 컨테이너 내부를 하나로 합쳐주는 기능
@@ -114,12 +114,14 @@ category: "Functional Programming"
     let texts = ["a", "b", "c", "d"]
     print(texts.reduce("") { $0 + $1 }) // abcd
 ```
+
 - reduce에서 클로저의 매개변수 이름을 first, second보다는 result, currentItem이라고 하는 것이 좋다.
     - result 는 초깃값으로부터 출발하여 마지막 요소까지 순회하는 결과값
     - currentItem은 현재 순회하고 있는 요소의 값
     - 만약 currentItem들이 없으면 초기값을 반환
 
 ### reduce(into:_:)
+
 ```swift
     let letters = "abracadabra"
     let letterCount = letters.reduce(into: [:]) { counts, letter in
