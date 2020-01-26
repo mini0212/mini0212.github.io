@@ -1,5 +1,5 @@
 ---
-title: "고차 함수(Higher Order Function"
+title: "고차 함수(Higher Order Function)"
 category: "Functional Programming"
 ---
 
@@ -138,4 +138,55 @@ category: "Functional Programming"
 - 단어 빈도 같은 것에 사용 가능하다
 - 결과는 copy-on-write(inout)으로 배열이나 딕셔너리와 같다
 
-forEach, flatMap 추가 예정!
+## forEach
+
+- 순차적으로 element에 접근할 수 있음
+- collection에서 제공하는 기능이며 클로저 방식으로 사용됨
+- for-in과 다르게 중간에 break로 탈출하지 못함
+- return을 하여 종료하지만 element를 인자로 가진 클로저가 실행이 된다.
+
+```swift
+    enum Calculator {
+        case nomal
+        case multiple
+        case plus
+        var calc: (Int) -> Void {
+            switch self {
+            case .nomal: return {print($0)}
+            case .multiple: return {print($0 * $0)}
+            case .plus: return {print($0 + $0)}
+            }
+        }
+    }
+    
+    let calc: Calculator = Calculator.nomal
+    let numbers: [Int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    numbers.forEach(calc.calc) //enum 내부의 함수를 실행
+```
+
+### flatMap
+
+- flatten + map의 합성
+- map에서 Optional로 둘러싸진 결과에서 Optional을 풀어낸 값이 나올 수 있게 한 것
+- swift4 이후 compactMap으로 변경
+
+```swift
+    // 2차 배열을 1차 배열로 합성
+    let arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    let flatArr = arr.flatMap { $0 }
+    print(flatArr) // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    
+    // Optional 제거
+    let a = [1, 2, 3, 4, 5]
+    let c: (Int) -> Int? = { n in
+        if n % 2 == 0 {
+            return n * 2
+        }
+        return nil
+    }
+    
+    print(a.map(c)) // [nil, Optional(4), nil, Optional(8), nil]
+    let b = a.compactMap(c)
+    print(b)  // [4, 8]
+```
+
